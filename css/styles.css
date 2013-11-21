@@ -152,9 +152,7 @@ input[type=text], input[type=password], a {
 p {
     font-family: 'Droid Serif', serif;
     font-size: 15px;
-	color: #333;
 	letter-spacing: .025em;
-	text-shadow: 0 0 1px #ccc;
 }
 
 html, body{
@@ -390,7 +388,7 @@ footer {
     border-radius: 30px;
     color:black;
 	text-indent: 20px;
- 
+
     padding:0px;
     margin:0px;
     font: 15px sans-serif;
@@ -568,5 +566,8 @@ footer {
 
 .script-link a{
 	text-decoration: none;
-	color: #A68200;
+	color: #A63E00;
+	font-weight: 700;
+	letter-spacing: .025em;
+	text-shadow: 0 0 1px #FFE173;
 }
