@@ -1,0 +1,572 @@
+/*------------------ Table of Contents --------------------
+
+	Section 1. HTML5 Reset and Basic Css
+	Section 2. Header Login Form
+	Section 3. Top Navigation Menu
+	Section 4. Leftside Menu Styling
+
+------------------ End Table of Contents ----------------*/
+
+
+/*----------------------- Section 1 ---------------------*/
+			/*---------- HTML5 Reset  ----------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+article, aside, figure, footer, header, hgroup, nav, section, details, summary {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+    don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't screw with your line-heights
+    gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attrfocusly */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon focus */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+	   content: "";
+	   visibility: hidden;
+	   display: block;
+	   height: 0;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+			/*---------- Basic Styling ----------*/
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+	font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 {
+	font-size: 25px;
+	line-height: 25px;
+    text-transform: capitalize;
+	font-variant: small-caps;
+	letter-spacing: 0.1em;
+}
+
+h3 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 15px;
+}
+
+input[type=text], input[type=password], a {
+	font-family: 'Droid Serif', serif;
+    font-size: 12px;
+	font-weight: 400;
+}
+
+p {
+    font-family: 'Droid Serif', serif;
+    font-size: 15px;
+	color: #333;
+	letter-spacing: .025em;
+	text-shadow: 0 0 1px #ccc;
+}
+
+html, body{
+	background: -webkit-gradient(linear, left top, left bottom, from(#A63E00), to(#fff));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	height: 100%;
+}
+
+header {
+	height: 100px;
+	background-color: #0E51A7;
+}
+
+.main-header{
+	border-bottom: 2px solid #05326D;
+	margin-bottom: 10px;
+}
+
+#doug-neiner-three, footer {
+	overflow: hidden;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #fff;
+	/* background-image: -moz-linear-gradient(
+		left,
+		#eee,
+		#eee 25%,
+		#ccc 25%,
+		#ccc 75%,
+		#eee 75%,
+		#eee 100%
+		);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+
+		color-stop(0, #eee),
+		color-stop(20%, #eee),
+		color-stop(20%, #ccc),
+		color-stop(70%, #ccc),
+		color-stop(70%, #eee),
+		color-stop(100%, #eee)
+		); */
+
+}
+#doug-neiner-three .col1, #doug-neiner-three .col2, #doug-neiner-three .col3 {
+	float: left; padding: 2%;
+	position: relative;
+}
+
+#doug-neiner-three .col1 {
+	width: 10%;
+}
+
+#doug-neiner-three .col2 {
+	width: 62%;
+}
+
+#doug-neiner-three .col3 {
+	width: 16%;
+}
+
+footer {
+	background-color: #0E51A7;
+	height: 50px;
+}
+
+
+/*----------------------- Section 2. Header Styling---------------------*/
+#login-header-form {
+	float: right;
+	width: 450px;
+}
+
+#login-header-form div {
+	display: inline-block;
+	width: auto;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#login-header-form div input[type=text],
+#login-header-form div input[type=password] {
+	height: 20px;
+	padding: 0px;
+	border-radius: 5px;
+	text-indent: 20px;
+}
+
+#login-header-form .username{
+	background-image: url('../images/security_guard-128.png');
+}
+
+#login-header-form .password{
+	background-image: url('../images/lock-128.png');
+}
+
+#login-header-form .username,
+#login-header-form .password {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 19px;
+	outline: 0;
+}
+
+#login-header-form div input[type=text]::-webkit-input-placeholder,
+#login-header-form div input[type=password]::-webkit-input-placeholder,
+#search::-webkit-input-placeholder{
+	color: #6997D3;
+	text-transform: capitalize;
+	font-variant: small-caps;
+	letter-spacing: 1%;
+	line-height: 21px;
+}
+
+#login-header-form div input[type=text]:-moz-placeholder,
+#login-header-form div input[type=password]:-moz-placeholder {
+    color: #6997D3;
+	text-transform: capitalize;
+	font-variant: small-caps;
+	letter-spacing: 1%;
+	line-height: 21px;
+}
+
+#login-header-form div input[type=text]::-moz-placeholder,
+#login-header-form div input[type=password]::-moz-placeholder {
+    color: #6997D3;
+	text-transform: capitalize;
+	font-variant: small-caps;
+	letter-spacing: 1%;
+	line-height: 21px;
+}
+
+#login-header-form div input[type=text]:-ms-input-placeholder,
+#login-header-form div input[type=password]:-ms-input-placeholder {
+    color: #6997D3;
+	text-transform: capitalize;
+	font-variant: small-caps;
+	letter-spacing: 1%;
+	line-height: 21px;
+}
+
+#login-header-form div input[type=text]:focus::-webkit-input-placeholder,
+#search-header-form input[type=text]:focus::-webkit-input-placeholder,
+#login-header-form div input[type=password]:focus::-webkit-input-placeholder {
+	opacity: 0.5;
+}
+
+#login-header-form div input[type=text]:focus:-moz-placeholder,
+#search-header-form input[type=text]:focus:-moz-placholder,
+#login-header-form div input[type=password]:focus:-moz-placeholder {
+   opacity: 0.5;
+}
+
+#login-header-form div input[type=text]:focus::-moz-placeholder,
+#search-header-form input[type=text]:focus::-moz-placeholder,
+#login-header-form div input[type]:focus::-moz-placeholder{
+    opacity: 0.5;
+}
+
+#login-header-form div input[type=text]:focus:-ms-input-placeholder,
+#search-header-form input[type=text]:focus:-ms-input-placeholder,
+#login-header-form div input[type=text]:focus:-ms-input-placeholder{
+   opacity: 0.5;
+}
+
+#login-header-form .login-header-submit {
+	border: none;
+	color: rgba(0, 0, 0, 0);
+	font-size: 0;
+}
+
+#login-header-form .login-header-submit{
+	background: url('../images/login.png') no-repeat center center;
+	width : 55px;
+	height : 19px;
+	margin-left: -5px;
+}
+
+#register {
+	text-align: right;
+	width: 75%;
+	color: #FFF;
+	font-size: 9px;
+	float: right;
+	margin-top: 4px;
+	margin-right: 81px;
+}
+
+#register a {
+	text-decoration: none;
+	color: #FFE173;
+}
+
+#register a:hover {
+	color: #FFC900;
+}
+
+#search-header-form {
+	position:absolute;
+	top: 56px;
+	right: 192px;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+    z-index:11;
+}
+
+#search-header-form input[type=submit]{
+	background : url('../images/search.png') no-repeat center center;
+    width : 35px;
+    height :20px;
+    border : none;
+    color : transparent;
+    font-size : 0;
+    cursor:pointer;
+    background-color:#FFC900;
+}
+
+#search{
+	height: 20px;
+    width: 200px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color:black;
+	text-indent: 20px;
+ 
+    padding:0px;
+    margin:0px;
+    font: 15px sans-serif;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+    border:1px solid #1b7883;
+    background-color:#ffffff;
+	outline: 0;
+}
+
+#search:focus{
+    width:300px;
+    border: 1px solid #1b7883;
+}
+
+#search:focus + #search-header-submit {
+  left:267px;
+}
+
+#search-header-submit{
+	position:absolute;
+    top:2px;
+    left:167px;
+     -webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-topright: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+      -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+
+/*----------------------- Section 3. Top Navigation Menu---------------------*/
+#underlinemenu{
+	margin: 0;
+	padding: 0;
+}
+
+#underlinemenu ul{
+	margin: 0;
+	padding-left: 0;
+	float: left;
+	width: 100%;
+	border-bottom: solid 1px #05326D;
+}
+
+* html #underlinemenu ul{ /*IE only rule. Delete extra margin-bottom*/
+	margin-bottom: 0;
+}
+
+#underlinemenu ul li{
+	display: inline;
+}
+
+
+#underlinemenu ul li a{
+	float: left;
+	color: #A63E00;
+	padding: 2px 6px 4px 6px;
+	text-decoration: none;
+	background: white url('../images/menudivide.gif') top right repeat-y;
+}
+
+#underlinemenu ul li a:hover{
+	color: #FFE173;
+	background-color: #A68200;
+	border-bottom: 4px solid #05326D;
+	padding-bottom: 0;
+}
+
+/*----------------------- Section 4. Leftside Menu Styling---------------------*/
+#navigation {
+	list-style: none;
+	display: block;
+	width: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 39px 0 39px 0;
+	background: url(../images/shad2.png) no-repeat;
+	-webkit-background-size: 50% 100%;
+}
+
+#navigation li a {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+    -webkit-transition: all 0.3s ease-out;
+    background: #cbcbcb url(../images/border.png) no-repeat;
+    color: #174867;
+    padding: 7px 15px 7px 15px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    -webkit-box-shadow: 2px 2px 4px #888;
+}
+
+#navigation li a:hover {
+    background: #ebebeb url(../images/border.png) no-repeat;
+    color: #67a5cd;
+    padding: 7px 15px 7px 30px;
+}
+
+/*----------------------- Section 5. Rightside  Styling---------------------*/
+.right-side-div{
+	width: 95%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2px;
+	margin-bottom: 10px;
+}
+
+.right-side-div h1{
+	margin: 0px 0px 7px 0px;
+	padding: 5px 5px 2px 5px;
+	line-height: 12px;
+	text-indent: 2px;
+	width: 100%;
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 3px solid #0E51A7;
+}
+
+.right-side-column-list{
+	margin-left: 5px;
+}
+
+.right-side-column-list li{
+	display: block;
+	margin-bottom: 3px;
+	line-height: 14px;
+}
+
+.right-side-column-list li a{
+	color: #A63E00;
+	text-decoration: none;
+}
+
+.right-side-column-list li a:hover{
+	color: #A68200;
+}
+
+/*----------------------- Section 6. Main content Styling---------------------*/
+.new-script{
+	margin-bottom: 5px;
+}
+
+.new-script-title{
+	letter-spacing: 0.1em;
+	display: block;
+	margin-bottom: 7px;
+	border-bottom: solid 1px #05326D;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.new-script-description{
+	line-height: 20px;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: justify;
+}
+
+.script-link a{
+	text-decoration: none;
+	color: #A68200;
+}

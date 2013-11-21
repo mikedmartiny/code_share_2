@@ -1,0 +1,45 @@
+pre { margin: 0; }
+  pre.LineNumbers {
+    float: left;
+    padding-right:2px;
+    border-right: solid 1px black;
+    margin-right:7px;
+  }
+  div.CodeBox {
+    border: solid 2px navy;
+    padding:2px;
+    background-color: #BFD1E4;
+  }
+
+<div class="CodeBox">
+    <pre class="LineNumbers">
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+        11
+        12
+        13
+    </pre>
+    <pre class="Source">
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+
+        static class Program {
+          public static void Main() {
+            var fibonacci = Enumerable.Repeat(new List<long>(32){ 1, 1 }, 1)
+                  .First(fib => Enumerable.Range(0, 32).Aggregate(true, (u1, u2) => {
+                                fib.Add(fib.Last() + fib[fib.Count - 2]); return true;
+            }));
+            Console.WriteLine(String.Join(", ", fibonacii.Select(i => i.ToString()).ToArray()));
+          }
+        }
+    </pre>
+</div>
