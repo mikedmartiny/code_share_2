@@ -10,7 +10,35 @@
 			<?php include('includes/page-layout/left-side.php');?>
 		</div><!-- close left -->
 	  	<div class="col2">
-			<?php include('includes/page-layout/middle.php');?>
+			<?php
+				$page = $_GET['page'];
+				$category = $_GET['category'];
+				$pages = array('register'); // the name of the names go here
+				$folders = array( ); //the name of the folders will go in here
+	
+				if(!empty($page) && !empty($category)) {
+					if(in_array($category,$folders) && in_array($page,$pages)) {
+							$url = $category . '/'. $page . '.php';
+							include($url);
+							exit();
+					} else {
+						echo 'Page not found. Return to
+						<a href="index.php">index</a>';
+					}
+				} else if(!empty($page)) {
+					if(in_array($page,$pages)) {
+						$page .= '.php';
+						include($page);
+						exit();
+					} else {
+						echo 'Page not found. Return to
+						<a href="index.php">index</a>';
+					}
+				} else {
+					include('includes/page-layout/middle.php');
+
+				}
+			?>
 		</div><!-- close middle -->
 		<div class="col3">
 			<?php include('includes/page-layout/right-side.php');?>
