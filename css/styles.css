@@ -162,9 +162,13 @@ html, body{
 	height: 100%;
 }
 
-header {
+header, footer {
 	height: 100px;
-	background-color: #0E51A7;
+	background-color: #6997D3;
+}
+
+footer {
+    text-align: center;
 }
 
 .main-header{
@@ -219,12 +223,6 @@ header {
 #doug-neiner-three .col3 {
 	width: 16%;
 }
-
-footer {
-	background-color: #0E51A7;
-	height: 50px;
-}
-
 
 /*----------------------- Section 2. Header Styling---------------------*/
 #login-header-form {
