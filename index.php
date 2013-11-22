@@ -11,8 +11,8 @@
 		</div><!-- close left -->
 	  	<div class="col2">
 			<?php
-				$page = $_GET['page'];
-				$category = $_GET['category'];
+				$page = $_GET['page']; //name of the page without the .php extension
+				$category = $_GET['category']; //the name of the folder that the file is in
 				$pages = array('register'); // the name of the names go here
 				$folders = array( ); //the name of the folders will go in here
 	
