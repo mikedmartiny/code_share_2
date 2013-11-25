@@ -10,7 +10,7 @@
 				<input class="username" type="text" name="username" placeholder="username" />
 			</div>
 			<p id="register">
-				Not a member <a href="#">Register</a> or <a href="#">Forgotten Password</a>
+				Not a member <a href="index.php?page=register">Register</a> or <a href="index.php?page=forgotten">Forgotten Password</a>
 			</p>
 		</form>
 		<form id="search-header-form" name="search-header-form" method="post" action="search.php">
@@ -18,4 +18,4 @@
 				<input id="search-header-submit" type="submit" name="search" />
 			<div class="hider"></div>
 		</form>
-</header> 
+</header>

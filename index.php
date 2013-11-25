@@ -11,16 +11,16 @@
 		</div><!-- close left -->
 	  	<div class="col2">
 			<?php
+			    echo messages();
 				$page = $_GET['page']; //name of the page without the .php extension
 				$category = $_GET['category']; //the name of the folder that the file is in
 				$pages = array('register'); // the name of the names go here
 				$folders = array( ); //the name of the folders will go in here
-	
+
 				if(!empty($page) && !empty($category)) {
 					if(in_array($category,$folders) && in_array($page,$pages)) {
 							$url = $category . '/'. $page . '.php';
 							include($url);
-							exit();
 					} else {
 						echo 'Page not found. Return to
 						<a href="index.php">index</a>';
@@ -29,7 +29,6 @@
 					if(in_array($page,$pages)) {
 						$page .= '.php';
 						include($page);
-						exit();
 					} else {
 						echo 'Page not found. Return to
 						<a href="index.php">index</a>';
@@ -48,4 +47,4 @@
 		<?php include('includes/page-layout/footer.php'); ?>
 	</div>
 	</body><!-- close body -->
-</html><!-- close html --> 
+</html><!-- close html -->

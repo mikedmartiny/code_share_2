@@ -4,6 +4,10 @@
 	Section 2. Header Login Form
 	Section 3. Top Navigation Menu
 	Section 4. Leftside Menu Styling
+	Section 5. Rightside  Styling
+	Section 6. Main content Styling
+	Section 7. Registration Form Styling
+	Section 8. Error,Success,Warning,Info Messages
 
 ------------------ End Table of Contents ----------------*/
 
@@ -169,6 +173,7 @@ header, footer {
 
 footer {
     text-align: center;
+    border-top: solid 1px #6997D3;
 }
 
 .main-header{
@@ -499,7 +504,7 @@ footer {
     padding: 7px 15px 7px 30px;
 }
 
-/*----------------------- Section 5. Rightside  Styling---------------------*/
+/*----------------------- Section 5. Rightside  Styling ---------------------*/
 .right-side-div{
 	width: 95%;
 	display: block;
@@ -569,3 +574,92 @@ footer {
 	letter-spacing: .025em;
 	text-shadow: 0 0 1px #FFE173;
 }
+
+/*----------------------- Section 7. Registration Form Styling ---------------------*/
+.registration {
+	margin: 0;
+    padding: 0;
+    width: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.registration h1{
+    height: 30px;
+    line-height: 46px;
+    font-size: 30px;
+    border-bottom: 4px solid #05326D;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-variant: small-caps;
+}
+.registration input[type=text],
+.registration input[type=password]{
+	padding: 2px;
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    text-indent: 20px;
+}
+
+.registration p {
+	margin:0 0 5px 0;
+	padding:0;
+}
+.color-answers {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.color-answers li{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+.captcha {
+    height:50px;
+    width:300px;
+    margin:0
+}
+
+/*---------------- Section 8. Error,Success,Warning,Info Messages ----------------*/
+.msg-info, .msg-ok, .msg-warning, .msg-error {
+    border: 1px solid;
+	width: 400px;
+	margin: 10px auto 10px;
+	padding: 15px 10px 15px 59px;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: 10px center;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	font-size: 14px;
+	font-family: 'DroidSansBold';
+	border-radius: .5em;
+}
+.msg-info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('/images/info.png');
+}
+.msg-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('/images/success.png');
+}
+.msg-warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('/images/warning.png');
+}
+.msg-error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('/images/error.png');
+}
+
