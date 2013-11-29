@@ -24,12 +24,6 @@
             </form>\r\n";
         }
     } else if($_GET['method'] == 'password'){
-        //Don't indicate if that email address was valid or not (just tell them that an email was dispatched).
-        //Generate a token (maybe hash a timestamp with a salt) and store it into the database in the user's record.
-        //Send an email to the user along with a link to your http*s* reset page (token and email address in the url).
-        //Use the token and email address to validate the user.
-        //Let them choose a new password, replacing the old one.
-        //Additionally, it's a good idea to expire those tokens after a certain time frame, usually 24 hours.
         if(isset($_POST['reset_password'])){
             $token = md5(uniqid(microtime(), true));
 
