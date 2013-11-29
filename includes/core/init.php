@@ -2,6 +2,7 @@
     ob_start();
     session_start();
 
-    require_once('db.php');
+    require('db.php');
+    include('includes/class/dbclass.php');
     include('functions/gen_functions.php');
 ?>

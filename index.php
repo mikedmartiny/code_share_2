@@ -14,7 +14,7 @@
 			    echo messages();
 				$page = $_GET['page']; //name of the page without the .php extension
 				$category = $_GET['category']; //the name of the folder that the file is in
-				$pages = array('register'); // the name of the names go here
+				$pages = array('register','forgotten','password_reset'); // the name of the names go here
 				$folders = array( ); //the name of the folders will go in here
 
 				if(!empty($page) && !empty($category)) {

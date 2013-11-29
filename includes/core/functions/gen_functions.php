@@ -1,23 +1,27 @@
 <?php
     function user_exsits($username) {
-        $sql="SELECT `username` FROM `users_table` WHERE `username` = '".$username."'";
-        $rs=$db->query($sql);
+        $mydb = new myDBC();
 
-        if($rs === false) {
-          return false;
-        } else {
+        $sql="SELECT `username` FROM `users_table` WHERE `username` = '".$username."' LIMIT 1";
+        $result = $mydb->runQuery($sql);
+
+        if($result = $mydb->totalCount('username', 'users_table', $where = "WHERE `username` = '".$username."'") > 0) {
           return true;
+        } else {
+          return false;
         }
     }
 
     function email_exsits($email) {
-        $sql="SELECT `email` FROM `users_table` WHERE `email` = '".$email."'";
-        $rs=$db->query($sql);
+        $mydb = new myDBC();
 
-        if($rs === false) {
-          return false;
-        } else {
+        $sql="SELECT `email` FROM `users_table` WHERE `email` = '".$email."' LIMIT 1";
+        $result = $mydb->runQuery($sql);
+
+        if($result = $mydb->totalCount('email', 'users_table', $where = "WHERE `email` = '".$email."'") > 0) {
           return true;
+        } else {
+          return false;
         }
     }
 
@@ -55,6 +59,12 @@
             $rndstring .= $template[$b];
         }
             return $rndstring;
+    }
+
+    function valid_pass($candidate) {
+        if (!preg_match_all('$\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$', $candidate))
+            return FALSE;
+        return TRUE;
     }
 
     function genenrate_password($salt,$pass){
